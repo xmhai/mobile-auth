@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IdentityPass.Views.ProfilePage"
+             xmlns:vm="clr-namespace:IdentityPass.ViewModels"
+             Title="Profile">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Name      LIN HAI" FontSize="Title"/>
+                <Label Text="NRIC      S*******" FontSize="16" Padding="0,0,0,0"/>
+                <Label Text="Certificate" FontSize="16" Padding="0,0,0,0"/>
+                <Label Text="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkxJTiBIQUkiLCJpYXQiOjE1MTYyMzkwMjJ9._KK57rwooihLiknBkObCVQ-yKssFcp75P5lvSMgbWM4" FontSize="16" Padding="0,0,0,0"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

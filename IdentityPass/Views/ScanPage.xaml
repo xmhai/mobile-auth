@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             mc:Ignorable="d"
+             x:Class="IdentityPass.Views.ScanPage"
+             Shell.NavBarIsVisible="True">
+    <Shell.TitleView>
+        <Label Text="IdentityPass" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" TextColor="White" />
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0">
+            <StackLayout x:Name="infoGroup" VerticalOptions="CenterAndExpand" Padding="30,24,30,24" Spacing="20" >
+                <Label Text="Log in to" HorizontalTextAlignment="Center" FontSize="Title" Padding="40,0,40,30" TextColor="Black" />
+                <Label x:Name="system" Text="AaaS E-SERVICE" HorizontalTextAlignment="Center" FontSize="18" TextColor="Red"/>
+                <Label x:Name="scanUrl" Text="aaas.cl.com" HorizontalTextAlignment="Center" FontSize="18" TextColor="Blue"/>
+                <Label x:Name="scanDate" Text="Date: 5 May 2021" FontSize="18" Padding="40,0,0,0" />
+                <Label x:Name="scanTime" Text="Time: 3:05PM" FontSize="18" Padding="40,0,0,0" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnCancel" Text="Cancel" Grid.Column="0" BackgroundColor="Gray" HeightRequest="40" Clicked="CancelButton_OnClicked" />
+                    <Button x:Name="btnLogin" Text="Log in" Grid.Column="1" BackgroundColor="ForestGreen" HeightRequest="40" Clicked="LoginButton_OnClicked" />
+                </Grid>
+            </StackLayout>
+
+            <zxing:ZXingScannerView x:Name="scanner" IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
